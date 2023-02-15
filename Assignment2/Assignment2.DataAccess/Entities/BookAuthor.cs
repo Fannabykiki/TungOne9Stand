@@ -14,6 +14,6 @@ namespace Assignment2.DataAccess.Entities
         public int BookId { get; set; }
         public Book Book { get; set; }
         public String AuthorOrder { get; set; }
-        public float RoyalityPercentage { get; set; }
+        public double RoyalityPercentage { get; set; }
     }
 }

@@ -82,8 +82,8 @@ namespace Assignment2.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("Pub_Id")
                         .HasColumnType("int");
@@ -107,6 +107,8 @@ namespace Assignment2.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Pub_Id");
+
                     b.ToTable("Books");
                 });
 
@@ -122,17 +124,12 @@ namespace Assignment2.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("RoyalityPercentage")
-                        .HasColumnType("real");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<double>("RoyalityPercentage")
+                        .HasColumnType("float");
 
                     b.HasKey("BookId", "AuthorId");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("BookAuthors");
                 });
@@ -226,7 +223,22 @@ namespace Assignment2.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PubId");
+
+                    b.HasIndex("RoleId");
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Assignment2.DataAccess.Entities.Book", b =>
+                {
+                    b.HasOne("Assignment2.DataAccess.Entities.Publisher", "Publisher")
+                        .WithMany()
+                        .HasForeignKey("Pub_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publisher");
                 });
 
             modelBuilder.Entity("Assignment2.DataAccess.Entities.BookAuthor", b =>
@@ -243,13 +255,28 @@ namespace Assignment2.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Assignment2.DataAccess.Entities.User", null)
-                        .WithMany("bookAuthors")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Author");
 
                     b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("Assignment2.DataAccess.Entities.User", b =>
+                {
+                    b.HasOne("Assignment2.DataAccess.Entities.Publisher", "Publisher")
+                        .WithMany()
+                        .HasForeignKey("PubId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment2.DataAccess.Entities.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publisher");
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("Assignment2.DataAccess.Entities.Author", b =>
@@ -258,11 +285,6 @@ namespace Assignment2.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("Assignment2.DataAccess.Entities.Book", b =>
-                {
-                    b.Navigation("bookAuthors");
-                });
-
-            modelBuilder.Entity("Assignment2.DataAccess.Entities.User", b =>
                 {
                     b.Navigation("bookAuthors");
                 });

@@ -64,3 +64,8 @@ D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\bin\Debug\
 D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\bin\Debug\net6.0\Assignment2.Service.dll
 D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\bin\Debug\net6.0\Assignment2.DataAccess.pdb
 D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\bin\Debug\net6.0\Assignment2.Service.pdb
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\obj\Debug\net6.0\staticwebassets\msbuild.Assignment2.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\obj\Debug\net6.0\staticwebassets\msbuild.build.Assignment2.API.props
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Assignment2.API.props
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Assignment2.API.props
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2\obj\Debug\net6.0\staticwebassets.pack.json

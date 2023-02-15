@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Assignment2.DataAccess.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class FirstMigra : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,27 +27,6 @@ namespace Assignment2.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Authors", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Books",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Pub_Id = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<float>(type: "real", nullable: false),
-                    Advance = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Royalty = table.Column<float>(type: "real", nullable: false),
-                    YtdSales = table.Column<int>(type: "int", nullable: false),
-                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublishedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Books", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,6 +59,33 @@ namespace Assignment2.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Books",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Pub_Id = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Advance = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Royalty = table.Column<float>(type: "real", nullable: false),
+                    YtdSales = table.Column<int>(type: "int", nullable: false),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PublishedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Books", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Books_Publishers_Pub_Id",
+                        column: x => x.Pub_Id,
+                        principalTable: "Publishers",
+                        principalColumn: "PubId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -98,6 +104,18 @@ namespace Assignment2.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_Publishers_PubId",
+                        column: x => x.PubId,
+                        principalTable: "Publishers",
+                        principalColumn: "PubId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Users_Roles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -107,8 +125,7 @@ namespace Assignment2.DataAccess.Migrations
                     AuthorId = table.Column<int>(type: "int", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: false),
                     AuthorOrder = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RoyalityPercentage = table.Column<float>(type: "real", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    RoyalityPercentage = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -125,11 +142,6 @@ namespace Assignment2.DataAccess.Migrations
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BookAuthors_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -138,9 +150,19 @@ namespace Assignment2.DataAccess.Migrations
                 column: "AuthorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookAuthors_UserId",
-                table: "BookAuthors",
-                column: "UserId");
+                name: "IX_Books_Pub_Id",
+                table: "Books",
+                column: "Pub_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_PubId",
+                table: "Users",
+                column: "PubId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_RoleId",
+                table: "Users",
+                column: "RoleId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -149,10 +171,7 @@ namespace Assignment2.DataAccess.Migrations
                 name: "BookAuthors");
 
             migrationBuilder.DropTable(
-                name: "Publishers");
-
-            migrationBuilder.DropTable(
-                name: "Roles");
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Authors");
@@ -161,7 +180,10 @@ namespace Assignment2.DataAccess.Migrations
                 name: "Books");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "Publishers");
         }
     }
 }

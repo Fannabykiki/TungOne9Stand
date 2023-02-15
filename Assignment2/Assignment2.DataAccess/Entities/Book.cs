@@ -11,9 +11,10 @@ namespace Assignment2.DataAccess.Entities
         public int Id { get; set; }
         public String Title { get; set; }
         public String Type { get; set; }
+        public Publisher Publisher { get; set; }
         [ForeignKey("Publisher")]
         public int Pub_Id { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
         public String Advance { get; set; }
         public float Royalty { get; set; }
         public int YtdSales { get; set; }

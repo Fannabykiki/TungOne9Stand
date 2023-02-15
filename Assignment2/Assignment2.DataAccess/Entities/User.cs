@@ -21,7 +21,8 @@ namespace Assignment2.DataAccess.Entities
         [ForeignKey("Publisher")]
         public int PubId { get; set; }
         public DateTime HireDate {get; set; }
-        public List<BookAuthor> bookAuthors { get; set; }
+        public Publisher Publisher { get; set; }
+        public Role Role { get; set; }
 
     }
 }
