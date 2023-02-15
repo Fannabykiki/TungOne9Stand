@@ -19,6 +19,6 @@ namespace Assignment2.DataAccess.Entities
         public int YtdSales { get; set; }
         public String Notes { get; set; }
         public DateTime PublishedDate { get; set; }
-
+        public List<BookAuthor> bookAuthors { get; set; }
     }
 }

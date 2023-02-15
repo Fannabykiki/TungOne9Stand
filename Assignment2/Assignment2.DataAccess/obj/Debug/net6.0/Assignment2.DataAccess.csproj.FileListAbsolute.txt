@@ -1,0 +1,14 @@
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\bin\Debug\net6.0\Assignment2.DataAccess.deps.json
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\bin\Debug\net6.0\Assignment2.DataAccess.runtimeconfig.json
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\bin\Debug\net6.0\Assignment2.DataAccess.dll
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\bin\Debug\net6.0\Assignment2.DataAccess.pdb
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.csproj.AssemblyReference.cache
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.AssemblyInfoInputs.cache
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.AssemblyInfo.cs
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.csproj.CoreCompileInputs.cache
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.dll
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\refint\Assignment2.DataAccess.dll
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.pdb
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\Assignment2.DataAccess.genruntimeconfig.cache
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.DataAccess\obj\Debug\net6.0\ref\Assignment2.DataAccess.dll

@@ -20,7 +20,7 @@ namespace Assignment2.DataAccess.Entities
         public int RoleId { get; set; }
         [ForeignKey("Publisher")]
         public int PubId { get; set; }
-        public DateOnly HireDate {get; set; }
+        public DateTime HireDate {get; set; }
         public List<BookAuthor> bookAuthors { get; set; }
 
     }
