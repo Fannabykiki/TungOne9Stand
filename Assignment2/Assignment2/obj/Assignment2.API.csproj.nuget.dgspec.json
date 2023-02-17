@@ -104,7 +104,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\FULearning\\Spring2023\\PRN231\\TungOne9Stand\\Assignment2\\Assignment2.DataAccess\\Assignment2.DataAccess.csproj": {
+                "projectPath": "D:\\FULearning\\Spring2023\\PRN231\\TungOne9Stand\\Assignment2\\Assignment2.DataAccess\\Assignment2.DataAccess.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -179,6 +183,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OData": {
+              "target": "Package",
+              "version": "[8.0.12, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.14, )"

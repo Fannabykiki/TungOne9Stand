@@ -10,3 +10,6 @@ D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\ob
 D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\obj\Debug\net6.0\refint\Assignment2.Service.dll
 D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\obj\Debug\net6.0\Assignment2.Service.pdb
 D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\obj\Debug\net6.0\ref\Assignment2.Service.dll
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\bin\Debug\net6.0\Assignment2.DataAccess.dll
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\bin\Debug\net6.0\Assignment2.DataAccess.pdb
+D:\FULearning\Spring2023\PRN231\TungOne9Stand\Assignment2\Assignment2.Service\obj\Debug\net6.0\Assignment2.Service.csproj.CopyComplete
