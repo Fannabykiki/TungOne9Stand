@@ -1,5 +1,6 @@
 ﻿using Assignment2.DataAccess.DTOs.Books;
 using Assignment2.Service.Services.BookService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 
@@ -34,6 +35,15 @@ namespace Assignment2.API.Controllers
         public  IActionResult Create([FromBody] CreateBookRequest addBook)
         {
             var result = _bookService.Create(addBook);
+
+            if (result == null) return StatusCode(500);
+
+            return Ok(result);
+        }
+        [HttpPut("books/{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateBookRequest updateBookRequest)
+        {
+            var result = _bookService.Update(updateBookRequest,id);
 
             if (result == null) return StatusCode(500);
 

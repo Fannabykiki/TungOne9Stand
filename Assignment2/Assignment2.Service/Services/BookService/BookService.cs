@@ -11,9 +11,11 @@ namespace Assignment2.Service.Services.BookService
         private readonly IBookAuthorRepository _bookAuthorRepository;
         private readonly IAuthorRepository _authorRepository;
 
-        public BookService(IBookRepository bookRepository)
+        public BookService(IBookRepository bookRepository, IBookAuthorRepository bookAuthorRepository, IAuthorRepository authorRepository)
         {
             _bookRepository = bookRepository;
+            _bookAuthorRepository = bookAuthorRepository;
+            _authorRepository = authorRepository;
         }
 
         public CreateBookReponse Create(CreateBookRequest book)

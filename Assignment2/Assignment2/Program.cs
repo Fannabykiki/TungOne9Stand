@@ -17,6 +17,9 @@ static IEdmModel GetEdmModel()
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+builder.Services.AddScoped<IBookAuthorRepository, BookAuthorRepository>();
+
 // Add services to the container.
 
 builder.Services.AddControllers().AddOData(opt => opt.AddRouteComponents("odata", GetEdmModel()).Filter().Select().Expand().Count().OrderBy().SetMaxTop(100));
